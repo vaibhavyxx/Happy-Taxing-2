@@ -17,7 +17,7 @@ public class Bank : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             panel.SetActive(true);
-            Debug.Log("true");
+            //Debug.Log("true");
         }
     }
 
@@ -26,7 +26,7 @@ public class Bank : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             panel.SetActive(false);
-            Debug.Log("true");
+            //Debug.Log("true");
         }
     }
 }
