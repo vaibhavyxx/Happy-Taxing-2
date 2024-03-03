@@ -10,6 +10,9 @@ public class PlayerInfo : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI text;
 
+    private string creditText = "Credit Card Required";
+    private string debitText = "Debit Card Required";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,15 @@ public class PlayerInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "Funds: $" + Player.Instance.Money + "  Time: " + Player.Instance.Time + ":00\n" + 
-                    "Debt: $" + Player.Instance.Debt;
+        if (Player.Instance.CreditCard)
+        {
+            creditText = "$" + Player.Instance.Debt.ToString();
+        }
+        if (Player.Instance.DebitCard)
+        {
+            debitText = "$" + Player.Instance.Money.ToString();
+        }
+        text.text = "Funds: " + debitText + "  Time: " + Player.Instance.Time + ":00\n" + 
+                    "Debt: " + creditText;
     }
 }
