@@ -23,7 +23,6 @@ public class MovementManager : MonoBehaviour
         // Gives a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
-        Player.Instance.Money++;
     }
 
     void FixedUpdate()
