@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static Player instance;
+    public static Player Instance { get; set; }
 
     private void Awake()
     { 
         // if instance exists thats not me, delete myself
-        if (instance != null && instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(this);
         }
         else // if no other instances
         {
-            instance = this;
+            Instance = this;
         }
     }
 
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private float money = 0;
     private float debt = 0;
     // current world time
-    private int time = 8;
+    private uint time = 8;
 
     // properties
     public bool CreditCard
@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public int Time
+    public uint Time
     {
         get
         {
