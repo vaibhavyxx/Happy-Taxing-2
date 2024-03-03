@@ -23,6 +23,11 @@ public class Player : MonoBehaviour
 
     private bool creditCard = false;
     private bool debitCard = false;
+    private bool employed = false;
+    private float money = 0;
+    private float debt = 0;
+    // current world time
+    private int time = 8;
 
     // properties
     public bool CreditCard
@@ -46,6 +51,54 @@ public class Player : MonoBehaviour
         set
         {
             debitCard = value;
+        }
+    }
+
+    public bool Employed
+    {
+        get
+        {
+            return employed;
+        }
+        set
+        {
+            employed = value;
+        }
+    }
+
+    public float Money
+    {
+        get
+        {
+            return money;
+        }
+        set
+        {
+            money = value;
+        }
+    }
+
+    public float Debt
+    {
+        get
+        {
+            return debt;
+        }
+        set
+        {
+            debt = value; 
+        }
+    }
+
+    public int Time
+    {
+        get
+        {
+            return time;
+        }
+        set
+        {
+            time = value;
         }
     }
 
