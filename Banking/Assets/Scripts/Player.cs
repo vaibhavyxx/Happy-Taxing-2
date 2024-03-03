@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     private float debt = 0;
     // current world time
     private uint time = 8;
+    private float tax=0;
 
     // properties
     public bool CreditCard
@@ -40,6 +41,15 @@ public class Player : MonoBehaviour
         {
             creditCard = value;
         }
+    }
+
+    public float Tax
+    {
+        get
+        {
+            return tax;
+        }
+        set { tax = value; }
     }
 
     public bool DebitCard
