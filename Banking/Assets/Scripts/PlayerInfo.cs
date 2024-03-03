@@ -30,7 +30,7 @@ public class PlayerInfo : MonoBehaviour
         {
             debitText = "$" + Player.Instance.Money.ToString();
         }
-        text.text = "Funds: " + debitText + "  Time: " + Player.Instance.Time + ":00\n" + 
-                    "Debt: " + creditText;
+        text.text = "Funds: " + debitText + "\tTime Right Now: " + Player.Instance.Time + ":00" + 
+                    "\tDebt: " + creditText;
     }
 }

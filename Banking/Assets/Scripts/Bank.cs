@@ -26,6 +26,7 @@ public class Bank : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             panel.SetActive(false);
+            Player.Instance.Time += 1;
             //Debug.Log("true");
         }
     }

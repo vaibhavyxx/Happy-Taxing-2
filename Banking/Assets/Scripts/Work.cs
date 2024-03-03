@@ -5,7 +5,7 @@ using UnityEngine;
 public class Work : MonoBehaviour
 {
     // Start is called before the first frame update
-    const int HoursWorked = 8;
+    const float HoursWorked = 8f;
     float time;
     const float payPerHour = 15.20f;
     void Start()
@@ -18,16 +18,18 @@ public class Work : MonoBehaviour
     {
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             float playerTime = Player.Instance.Time;
-            time += Time.deltaTime;
+            time += 0.5f;
+            Debug.Log(time);
             if (time >= HoursWorked && playerTime <= 10)
             {
-                playerTime += HoursWorked;
+                //playerTime += HoursWorked;
                 time = 0;
+                Player.Instance.Time += (uint)HoursWorked;
                 DailySalary();
             }
         }
@@ -35,7 +37,7 @@ public class Work : MonoBehaviour
 
     void DailySalary()
     {
-        Player.Instance.Money = payPerHour * 40 * 4;
+        Player.Instance.Money = payPerHour * 8;
     }
 
     void Taxed()
